@@ -1,0 +1,30 @@
+from flask import Flask
+import mysql.connector
+
+
+
+conexao = mysql.connector.connect(
+    host = 'localhost',
+    user = 'root',
+    password = "",
+    database = 'comerciantes'
+    
+)
+
+
+
+cursor = conexao.cursor()
+
+usuário = "caio "
+senha = "2323"
+
+
+comando = f"INSERT INTO usuarios (usuário, senha) VALUES ('{usuário}', '{senha}')"
+
+
+cursor.execute(comando)
+conexao.commit()
+
+cursor.close()
+conexao.close()
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumidor</title>
+
+    <style>
+
+h1{
+    text-align: center;
+    font: normal 40pt arial
+}
+
+h2{
+    text-align: center;
+    font: normal 20pt arial
+}
+
+body{
+    background-color: yellow;
+}
+
+form{
+    text-align: center;
+    font: normal 15pt arial
+}
+
+    .center-image {
+        text-align: center; /* Centralizar o conteúdo dentro do elemento */
+}
+
+nav {
+    background-color: #333; /* Cor de fundo da barra de menus */
+    padding: 10px 0; /* Espaçamento interno (topo e base) */
+}
+
+nav ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+}
+
+nav ul li {
+    display: inline; 
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remover sublinhado dos links */
+    font: normal 12pt arial
+}
+
+nav ul li a:hover{
+    background-color: aqua; 
+    color: blue;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Olá Consumidor!</h1>
+    <nav>
+        <ul>
+           <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+           <li><a href="{{ url_for('login') }}">Comerciantes</a></li>
+           <li><a href="{{ url_for('clientes') }}">Consumidores</a></li>
+           <li><a href="{{ url_for('sobre') }}">sobre</a></li>
+        </ul>
+    </nav>
+    
+    <h2>O que você procura hoje?</h2>
+    <form method="POST" action="/products">
+
+    <label for="produto">Digite seu Produto:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    <input type="submit" value="Procurar"><br>
+
+
+    <div class="center-image"> <!-- Container para centralizar a imagem -->
+        <img src="cifrao.jpg" alt="cifrao" width="200 height 200">
+    </div>
+    
+</body>
+</html>

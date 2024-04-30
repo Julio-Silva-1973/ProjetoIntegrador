@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Login</title>
+</head>
+
+<style>
+    
+    body{
+        width: 100vm;
+        height: 100vh;
+        background-image: url("{{url_for('static',filename='login.jpg')}}");
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #080808;
+    }
+
+    body{
+        background-color: aqua;
+    }
+
+
+    h1{
+        text-align:center ;
+        font: normal 30pt arial
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    h3{
+        text-align: center;
+        
+    }
+
+     div{
+            text-align: center;
+            font: normal 15pt arial
+     }
+</style>
+
+<body>
+    
+
+    <h1>Bem vindo a nossa Plataforma</h1>
+    <h2>Cadastro e Login</h2>
+    <h3>Se voce é um usuário cadastrado entre com seu login e senha ou cadastre-se.</h3>
+
+
+    
+
+    <div id="formularioLogin">
+        <h2>Login</h2>
+        <label for="login">Login:</label><br>
+        <input type="text" id="loginInput"><br>
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senhaInput"><br>
+        <button onclick="fazerLogin()">Login</button>
+        <label id="mensagemLogin"></label>
+    </div>
+
+
+    <div id="formularioCadastro">
+        <h2>Cadastro</h2>
+        <label for="nomeCadastro">Nome:</label><br>
+        <input type="text" id="nomeCadastro"><br>
+        <label for="loginCadastro">Login:</label><br>
+        <input type="text" id="loginCadastro"><br>
+        <label for="senhaCadastro">Senha:</label><br>
+        <input type="password" id="senhaCadastro"><br>
+        <button onclick="cadastrarUsuario()">Cadastrar</button>
+        <label id="mensagemCadastro"></label>
+    </div>
+
+    
+
+    <script>
+        
+        function fazerLogin() {
+            var login = document.getElementById("loginInput").value;
+            var senha = document.getElementById("senhaInput").value;
+
+            var usuarioEncontrado = usuarios.find(function(usuario) {
+                return usuario.login === login && usuario.senha === senha;
+            });
+
+            if (usuarioEncontrado) {
+                window.location.href = "/comerciantes";
+                document.getElementById("mensagemLogin").innerText = "Login bem-sucedido! Bem-vindo, " + usuarioEncontrado.nome + "!";
+            } else {
+                document.getElementById("mensagemLogin").innerText = "Login ou senha incorretos.";
+            }
+        }
+
+        var usuarios = [];
+
+        function cadastrarUsuario() {
+            var novoUsuario = {};
+
+            novoUsuario.nome = document.getElementById("nomeCadastro").value;
+            novoUsuario.login = document.getElementById("loginCadastro").value;
+            novoUsuario.senha = document.getElementById("senhaCadastro").value;
+
+            usuarios.push(novoUsuario);
+
+            document.getElementById("mensagemCadastro").innerText = "Usuário cadastrado com sucesso!";
+        }
+
+    </script>
+</body>
+</html>

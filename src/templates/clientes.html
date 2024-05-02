@@ -6,6 +6,18 @@
     <title>Consumidor</title>
 
     <style>
+         body{
+            width: 100vm;
+            height: 100vh;
+            background-image: url("{{url_for('static',filename='clientes.jpg')}}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+        }
+
 
 h1{
     text-align: center;
@@ -80,10 +92,5 @@ nav ul li a:hover{
     <input type="text" id="name" name="name"><br><br>
     <input type="submit" value="Procurar"><br>
 
-
-    <div class="center-image"> <!-- Container para centralizar a imagem -->
-        <img src="cifrao.jpg" alt="cifrao" width="200 height 200">
-    </div>
-    
 </body>
 </html>

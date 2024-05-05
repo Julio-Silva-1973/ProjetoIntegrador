@@ -80,10 +80,41 @@ nav ul li a:hover{  /* Muda de cor ao parar o mouse em cima dos itens do menu */
     color: blue;
 }
 
+   </STYLE>
 
-    </STYLE>
+   <button onclick="exibirTexto()">Tutorial de uso</button>
+   <div id = "caixadeTexto"></div><br>
+
+   <button onclick="exibirTexto1()">Comerciantes</button>
+   <div id = "caixadeTexto1"></div><br>
+
+   <button onclick="exibirTexto2()">Consumidores</button>
+   <div id = "caixadeTexto2"></div>
+
+   
 </body>
 <script>
-    window.alert('Bem Vindo ao VenBarato') /* Mensagem de boas vindas ao inicializar a página*/
+    window.alert('Bem Vindo a nossa plataforma') /* Mensagem de boas vindas ao inicializar a página*/
+
+    function exibirTexto() {
+        var caixadeTexto = document.getElementById("caixadeTexto");
+        var texto = "Para saber mais escolha um dos botões abaixo:";
+        caixadeTexto.innerHTML = texto;
+        caixadeTexto.classList.add("mostrar");
+    }
+
+    function exibirTexto1() {
+        var caixadeTexto1 = document.getElementById("caixadeTexto1");
+        var texto1 = "Olá amigo comerciante! Para usar esta aplicação comece clicando no menu comerciantes Depois, faça o seu cadastro e login"
+        caixadeTexto1.innerHTML = texto1;
+        caixadeTexto1.classList.add("mostrar");
+    }
+
+    function exibirTexto2() {
+        var caixadeTexto2 = document.getElementById("caixadeTexto2");
+        var texto2 = "Olá amigo consumidor! Para usar esta aplicação comece clicando no menu consumidor e digite o produto desejado, escolha-o com a melhor oferta!";
+        caixadeTexto2.innerHTML = texto2;
+        caixadeTexto2.classList.add("mostrar");
+    }
     </script>
 </html>
